@@ -10,6 +10,7 @@ import { corsOptions } from "../corsOptions";
 import fileRouter from "./fileRouter";
 import { ApolloServer } from "@apollo/server";
 import schema from "../schema";
+import ksnetPay from "./ksnetPay";
 
 const createApiRouter = async (httpServer) => {
   const router = express.Router();
@@ -35,6 +36,7 @@ const createApiRouter = async (httpServer) => {
 
   // REST API 라우터
   router.use("/files", fileRouter);
+  router.use("/ksnet", ksnetPay);
 
   // GraphQL 라우터
   router.use(

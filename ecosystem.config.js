@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "cube_server",
+      name: "server",
       script: "./src/server-register.js",
       instances: 1,
       exec_mode: "cluster",
@@ -19,7 +19,7 @@ module.exports = {
     //   },
     // },
     {
-      name: "fbz_prismaDB",
+      name: "prismaDB",
       script: "npm run studio",
       exec_mode: "fork",
       watch: false,

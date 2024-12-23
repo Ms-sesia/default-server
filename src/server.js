@@ -25,7 +25,7 @@ const PORT = process.env.SERVER_PORT;
 
   // 이외 경로로 접속할 경우 404페이지 리다이렉트
   app.use("*", (req, res, next) => {
-    return res.redirect(process.env.PROJECT_URL); // get으로 요청시 에러
+    return res.redirect(process.env.PORJECT_ENV === "production" ? process.env.PROJECT_URL : process.env.DEV_URL); // get으로 요청시 에러
   });
 
   app.use((err, req, res, next) => {
