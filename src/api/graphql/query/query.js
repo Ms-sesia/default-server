@@ -1,6 +1,6 @@
 export default {
   Query: {
-    test: async (_, args, { request, isAutheticated }) => {
+    test: async (_, args, { request, isAutheticated, prisma }) => {
       const { text } = args;
       try {
         console.log("text:", text);

@@ -1,6 +1,6 @@
 import crypto from "crypto";
 
-// 비밀번호 생성
+// 비밀번호 생성(단방향 - sha256)
 export const makeHashPassword = async (password) => {
   try {
     const salt = crypto.randomBytes(16).toString("base64");

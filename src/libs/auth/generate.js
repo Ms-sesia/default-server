@@ -1,9 +1,11 @@
 import jwt from "jsonwebtoken";
 
+// 임시 6자리 숫자 번호 생성(이메일 및 핸드폰 인증용)
 export const generateSecretCode = () => {
   return Math.floor(100000 + Math.random() * 900000).toString();
 };
 
+// 토큰 정보 생성
 export const generateToken = (user) => {
   let accessTokenExpires, refreshTokenExpires;
 
@@ -32,7 +34,7 @@ export const generateToken = (user) => {
   };
 };
 
-// 임시비밀번호 생성을 위한 랜덤 코드 생성
+// 영문, 숫자 섞은 랜덤코드 생성
 export const genRandomCode = (stringLength) => {
   const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ";
 

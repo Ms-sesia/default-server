@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "server",
+      name: "defaultServer",
       script: "./src/server-register.js",
       instances: 1,
       exec_mode: "cluster",

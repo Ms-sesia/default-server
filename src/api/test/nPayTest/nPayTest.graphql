@@ -1,9 +1,0 @@
-type Mutation {
-  nPayTest: ksnetPay
-}
-
-type ksnetPay {
-  success: Boolean
-  message: String
-  data: String
-}

@@ -3,6 +3,7 @@ import crypto from "crypto";
 const ENCRYPTION_KEY = process.env.AES_KEY; // 32 바이트
 const IV_LENGTH = 16; // AES 블록 크기
 
+// 데이터 암호화(양방향 - aes256)
 export const encryptPrivData = (text) => {
   const iv = crypto.randomBytes(IV_LENGTH);
   let cipher = crypto.createCipheriv("aes-256-cbc", Buffer.from(ENCRYPTION_KEY, "hex"), iv);
@@ -12,6 +13,7 @@ export const encryptPrivData = (text) => {
   return iv.toString("hex") + ":" + encrypted.toString("hex");
 };
 
+// 데이터 복호화(양방향 - aes256)
 export const decryptPrivData = (text) => {
   let textParts = text.split(":");
   let iv = Buffer.from(textParts.shift(), "hex");
